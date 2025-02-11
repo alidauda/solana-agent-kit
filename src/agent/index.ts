@@ -135,6 +135,7 @@ import {
   TargetTokenStruct,
   InputAssetStruct,
   fluxBeamCreatePool,
+  verify_program,
 } from "../tools";
 import {
   Config,
@@ -1157,5 +1158,9 @@ export class SolanaAgentKit {
       token_b,
       token_b_amount,
     );
+  }
+
+  async verifyProgram(params: VerifyProgramParams): Promise<string> {
+    return verify_program(this, params);
   }
 }
